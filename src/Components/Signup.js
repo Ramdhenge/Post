@@ -8,19 +8,23 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (credentials.password !== credentials.cpassword) {
-      alert("Password and Confirm Password does not match");
-    } else {
-      localStorage.setItem("email", credentials.email);
-      localStorage.setItem("password", credentials.password);
-      navigate('/login');
+    if (credentials.email.length > 0 && credentials.password.length > 0 && credentials.cpassword.length > 0 ) {
+      if (credentials.password !== credentials.cpassword) {
+        alert("Password and Confirm Password does not match");
+      } else {
+        localStorage.setItem("email", credentials.email);
+        localStorage.setItem("password", credentials.password);
+        navigate('/login');
+      }
+    }else{
+      alert("All fields must be filled");
     }
 
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     document.title = "SignUp";
-  },[]);
+  }, []);
 
   const handleOnChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -44,7 +48,7 @@ function Signup() {
         </div>
         <button type="submit" className="btn btn-primary" onClick={handleSubmit}>SignUp</button>
         <div className='mt-3'>
-            <p>Already have an account? <NavLink to="/login">Login</NavLink></p>
+          <p>Already have an account? <NavLink to="/login">Login</NavLink></p>
         </div>
       </form>
     </div>
