@@ -38,7 +38,7 @@ function Loin() {
         </div>
         <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Login</button>
         <div className='mt-3'>
-            <p>Already have an account? <NavLink to="/signup">Signup</NavLink></p>
+            <p>Don't have an account? <NavLink to="/signup">Signup</NavLink></p>
         </div>
       </form>
     </div>
