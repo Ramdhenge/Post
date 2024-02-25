@@ -77,7 +77,7 @@ const Feeds = () => {
             {
               allData.map((post) => {
                 return <div key={post.id}>
-                  <FeedCard title={post.title} body={post.body} id={post.id} post={post} currentPost={currentPost} />
+                  <FeedCard post={post} currentPost={currentPost} />
                 </div>
               })
             }
